@@ -51,7 +51,6 @@ public class Main {
             midExpenses = sum / daysMount.length;
             System.out.println("Средняя сумма трат за месяц составила " + midExpenses + " рублей");
         }
-
     }
 
     public static void task4 () {
