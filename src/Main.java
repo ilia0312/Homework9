@@ -15,26 +15,21 @@ public class Main {
 
         System.out.println("Задача 1");
         int[ ] arr = generateRandomArray();
-        int[ ] daysMount = new int [30];
-        int allExpenses = -1;
-        int expenses = 0;
-        for (int i = 0; i < daysMount.length - 1 ; i++) {
-            expenses = expenses + arr[i + 1] + daysMount[i];
-            if (expenses > allExpenses) {
-                allExpenses = expenses;
-            }
+        int allExpenses = 0;
+        for (int i = 0; i < arr.length - 1 ; i++) {
+            allExpenses = allExpenses + arr[i];
         }
         System.out.println("Сумма трат за месяц составила " +allExpenses+ " рублей");
 
         System.out.println("Задача 2");
 
-        int maxExpenses = 0;
-        int minExpenses = 0;
-        for (int i = 0; i < daysMount.length - 1 ; i++) {
+        int maxExpenses = arr[0];
+        int minExpenses = arr[0];
+        for (int i = 0; i < arr.length - 1 ; i++) {
             if (arr[i] > maxExpenses) {
                 maxExpenses = arr[i];
             }
-            if (arr[i] < maxExpenses) {
+            if (arr[i] < minExpenses) {
                 minExpenses = arr[i];
             }
         }
@@ -43,15 +38,12 @@ public class Main {
         System.out.println("Задача 3");
 
         double midExpenses = 0;
-        if (arr.length > 0) {
             double sum = 0;
-            for (int i = 0; i < daysMount.length - 1; i++) {
+            for (int i = 0; i < arr.length - 1; i++) {
                 sum += arr[i];
             }
-            midExpenses = sum / daysMount.length;
+            midExpenses = sum / arr.length;
             System.out.println("Средняя сумма трат за месяц составила " + midExpenses + " рублей");
-        }
-
     }
 
     public static void task4 () {
